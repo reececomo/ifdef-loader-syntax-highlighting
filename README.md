@@ -11,12 +11,13 @@ Syntax highlighting for [**ifdef-loader**](https://www.npmjs.com/package/ifdef-l
 
 <img alt="Example usage" src="./example.jpg" width="265px" />
 
-#### Recommended: Enable block highlighting
+### Recommended: Enable block highlighting
 
-Configure block-level highlights - e.g. using the [**Highlight extension**](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight):
+Configure block highlights - e.g. using the [**Highlight extension**](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-highlight):
+
+#### .vscode/settings.json:
 
 ```json
-// .vscode/settings.json
 {
   "highlight.regexes": {
     "( *\/\/\/ #if.*)((?:.|\n)*?\n)( *\/\/\/ #endif)": {
@@ -49,17 +50,13 @@ Configure block-level highlights - e.g. using the [**Highlight extension**](http
 }
 ```
 
-## Build & test
+## Build & install
 
 ```sh
-git checkout git@github.com:reececomo/ifdef-loader-syntax-highlighting
+git clone git@github.com:reececomo/ifdef-loader-syntax-highlighting
 cd ifdef-loader-syntax-highlighting
-```
 
-```sh
 npm run build
-```
 
-```sh
 npm run install-extension
 ```
