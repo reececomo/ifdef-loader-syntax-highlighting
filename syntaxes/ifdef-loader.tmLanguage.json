@@ -1,0 +1,52 @@
+{
+  "scopeName": "source#ifdef-loader",
+  "injectionSelector": "comment.line.double-slash",
+  "patterns": [
+    {
+      "name": "comment.preprocessor.ifdef-loader.begin",
+      "begin": "(/)\\s+(#(?:if|elif))\\s+",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment" },
+        "2": { "name": "keyword.control.conditional" }
+      },
+      "end": "\\n",
+      "patterns": [
+        {
+          "match": "\\b__build_(?:debug|release)__\\b",
+          "name": "variable.other.constant"
+        },
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "name": "comment.preprocessor.ifdef-loader.end",
+      "begin": "(/)\\s+(#(?:else|endif))\\b",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment" },
+        "2": { "name": "keyword.control.conditional" }
+      },
+      "end": "\\n",
+      "patterns": []
+    },
+    {
+      "name": "comment.preprocessor.ifdef-loader.code",
+      "begin": "(/)\\s+(?:(#\\b(?!if\\b|elif\\b|else\\b|endif\\b)\\w+\\b)?)\\s*",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment" },
+        "2": { "name": "keyword.control.conditional" }
+      },
+      "end": "\\n",
+      "patterns": [
+        {
+          "match": "\\b[A-Z][A-Z0-9_]*\\b",
+          "name": "variable.other.enummember"
+        },
+        {
+          "include": "source.js"
+        }
+      ]
+    }
+  ]
+}

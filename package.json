@@ -1,0 +1,48 @@
+{
+  "icon": "icon.jpg",
+  "name": "ifdef-loader-syntax-highlighting",
+  "displayName": "ifdef-loader Syntax Highlighting",
+  "description": "Syntax highlighting for ifdef-loader conditional compilation comments in TypeScript and JavaScript files.",
+  "version": "0.1.0",
+  "publisher": "reececomo",
+  "scripts": {
+    "lint": "npx jsonlint-cli package.json syntaxes/ifdef-loader.tmLanguage.json",
+    "build": "rm -f *.vsix && npx vsce package",
+    "install-extension": "code --install-extension ./ifdef-loader-syntax-highlighting-*.vsix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reececomo/ifdef-loader-syntax-highlighting"
+  },
+  "bugs": {
+    "url": "https://github.com/reececomo/ifdef-loader-syntax-highlighting/issues"
+  },
+  "homepage": "https://github.com/reececomo/ifdef-loader-syntax-highlighting#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "source#ifdef-loader",
+        "path": "./syntaxes/ifdef-loader.tmLanguage.json",
+        "injectTo": ["source.js", "source.jsx", "source.ts", "source.tsx"]
+      }
+    ]
+  },
+  "keywords": [
+    "ifdef-loader",
+    "ifdef",
+    "compilation",
+    "conditional",
+    "highlighting",
+    "javascript",
+    "macro",
+    "preprocessor",
+    "syntax",
+    "typescript",
+    "webpack"
+  ]
+}
